@@ -1,0 +1,45 @@
+.circle {
+  margin: 0 auto;
+  width: 500px;
+  height: 500px;
+  border: 15px solid rgb(163, 151, 198);
+  border-radius: 50%;
+}
+.dday {
+  padding: 50px 0;
+}
+.wrapper {
+  margin: 0 auto;
+  padding: 30px;
+  max-width: 1170px;
+}
+h1 {
+  font-size: 40px;
+  color : tomato;
+  font-family: 'Gowun Dodum', sans-serif;
+}
+h2 {
+  color :white;
+  font-weight: lighter;
+  font-family: 'Gowun Dodum', sans-serif;
+}
+#title {
+  color: rgb(191, 185, 211);
+  font-size: 50px;
+  font-family: 'Tiro Devanagari Marathi', serif;
+  font-weight: 600;
+}
+
+#activity {
+  width:fit-content;
+  height:fit-content;
+  border-radius: 40px 80px / 80px 40px;
+  background-color: rgba(197, 97, 201, 0.486);
+}
+body {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: rgb(78, 76, 76);
+}
