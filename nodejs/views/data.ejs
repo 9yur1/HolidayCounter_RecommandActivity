@@ -1,0 +1,300 @@
+<!-- data.ejs -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check the Holiday</title>
+    <link rel="stylesheet" href="../public/css/main.css" type="text/css">
+    <!--style.css 파일 적용.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+</head>
+<center>
+
+    <body>
+        <div id="title">When is Next Holiday?</div>
+        <br><br>
+        <div class="wrapper">
+            <div class="circle">
+                <p class="dday">
+                    <span>
+                        <h2>오늘로부터 가장 가까운 휴일은</h2>
+                        <h1>
+                            <%= data[0] %>
+                        </h1>
+                        <h1 style="font-size: 80px;"> D - <%= data[2] %>
+                        </h1>
+                        <h2>
+                            <%= data[1][0] %>
+                                <%= data[1][1] %>
+                                    <%= data[1][2] %>
+                                        <%= data[1][3] %>년 <%= data[1][4] %>
+                                                <%= data[1][5] %>월 <%= data[1][6] %>
+                                                        <%= data[1][7] %>일
+                        </h2>
+                        <h2> </h2>
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <!--comment part-->
+        <div id="comment">
+            <% if (data[2] << 7 ) { %>
+                <h2>벌써 <%= data[0] %>이(가) <font color="pink">일주일</font>도 남지 않았습니다! </h2>
+
+                <% } else if (data[2] << 10) { %>
+                    <h2>어느새 <%= data[0] %>이(가) <font color="pink">열흘</font>도 남지 않았습니다! </h2>
+
+                    <% } else if (data[2] << 31) { %>
+                        <h2>
+                            <%= data[0] %>이(가) <font color="pink">한 달</font>도 남지 않았습니다!
+                        </h2>
+
+                        <% } else if (data[2]==0) { %>
+                            <h2>오늘은 즐거운 공휴일!</h2>
+
+                            <% } else { %>
+                                <h2>오늘부터 한 달 안에 공휴일이 없습니다..</h2>
+                                <% } %>
+        </div>
+
+
+        <br><br>
+
+
+        <!--recommend activity-->
+        <h2> [<%= data[0] %>]에 추천하는 활동 </h2>
+        <div>
+            <% if (data[1]=='20230101' ) { %>
+                <div id="detail">
+                    <br>
+                    <h2>새해의 첫날이며, 영어로는 New Years Day라고 한다. </h2>
+                    <h2>1. 제야의 종(보신각) <br>
+                        보신각은 서울 종로구이 취치에 있는 종각으로 서울보신각종을 걸어 둘 수 있게 만든 것이다. <br>
+                        이 종은 1986년에 제작된 '서울대종'이며, 새해 첫날의 시작을 알리는 용도로 사용된다. <br></h2>
+                    <h2>2. 해돋이 <br>
+                        해는 매일 뜨지만 신년의 첫 해는 특별하게 느껴진다. <br>
+                        새해 첫날에 해돋이를 보면서 소원을 빌어보는 건 어떨까?<br>
+
+                    </h2><br>
+                </div>
+                <div class="frame">
+                    <button class="custom-btn btn-12" onclick="location.href='https://culture.seoul.go.kr/culture/main/contents.do?menuNo=200049' "><span>click!</span><span>보신각 타종신청</span></button>
+                    <button class="custom-btn btn-12" onclick="location.href='https://m.search.naver.com/search.naver?sm=mtb_hty.top&where=m&oquery=%ED%95%B4%EB%8F%8B%EC%9D%B4&tqi=hiXs9sp0JWoss4RGdChssssss5R-149632&query=%EC%9D%BC%EC%B6%9C%EC%8B%9C%EA%B0%84' "><span>click!</span><span>일출시간</span></button>
+                </div>
+            
+                    
+                </div>
+                <% } else if (data[1]=='20230121' || data[1]=='20230122' || data[1]=='20230123' ) { %>
+                    <div id="detail">
+                        <br>
+                        <h2>설날은 음력 1월1일에 기념하는 날이고, 추석과 함께 한국의 대표적인 연휴이다.  <br></h2>
+                        <h2>가족들과 함께 즐거운 설을 보내자! </h2>
+                        <br>
+                    </div>
+                    <div class="frame">
+                        <button class="custom-btn btn-12" onclick="location.href='https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EA%B5%90%ED%86%B5%EC%A7%80%EB%8F%84&oquery=%EA%B5%90%ED%86%B5%ED%8E%B8&tqi=hpXuusp0J14ssao53Xlsssssstw-455597' "><span>click!</span><span>교통지도</span></button>
+                    </div>
+                    <% } else if (data[1]=='20230301' ) { %>
+                        <div id="detail">
+                            <br>
+                            <h2>삼일절은 3·1 운동을 기념하기 위해 제정된 국경일이다.</h2>
+                            <h2>1. 서대문형무소 역사관 <br>
+                                서대문구에 위치한 역사관으로 일본이 한국의 독립운동가들을 가두기 위해 만든 감옥이다.<br>
+                                서대문형무소 역사관에는 이러한 역사의 흔적이 그대로 남아있다. </h2>
+                            <h2>2. 독립기념관 <br>
+                                충남 천안시에 위치해 있으며 삼일절에 다양한 행사를 한다. </h2><br>
+                        </div>
+                        <div class="frame">
+                            <button class="custom-btn btn-12" onclick="location.href='https://sphh.sscmc.or.kr/' "><span>click!</span><span>서대문형무소역사관</span></button></span></button>
+                            <button class="custom-btn btn-12" onclick="location.href='https://i815.or.kr/2018/tour/location.do' "><span>click!</span><span>독립기념관</span></button></span></button>
+                        </div>
+                        <% } else if (data[1]=='20230505' ) { %>
+                            <div id="detail">
+                                <br>
+                                <h2>어린이날은 어린이를 기념하기 위해 만들어진 날이다.  
+                                </h2>
+                                <h2>1. 롯데월드 <br>
+                                    서울의 대표적 명소로 서울에 거주중이라면 편하게 갈 수 있는 곳이다. <br>
+                                    아이들이 좋아하는 테마파크가 존재한다. </h2>
+                                <h2>2. 서울 어린이 대공원 <br>
+                                    서울에서 제일 큰 놀이터라는 별명을 가진 공원이다. <br>
+                                    놀이동산 뿐만 아니라 동물원까지 있어 사실상 아이들이 놀기 딱 좋은 놀이시설이다. </h2>
+                                <br>
+                            </div>
+                            <div class="frame">
+                                <button class="custom-btn btn-12" onclick="location.href='http://www.lotteworld.com/gate.html' "><span>click!</span><span>롯데월드</span></button></span></button>
+                            <button class="custom-btn btn-12" onclick="location.href='https://www.sisul.or.kr/open_content/childrenpark/' "><span>click!</span><span>서울 어린이 대공원</span></button></span></button>
+                            </div>
+                           
+                            <% } else if (data[1]=='20230527' ) { %>
+                                <div id="detail">
+                                    <br>
+                                    <h2>석가모니를 기념하기 위해 제정된 법정 공휴일이다.  </h2>
+                                    <h2>1. 봉은사<br>
+                                        봉은사는 서울 한가운데에 있을 뿐 아니라 역과의 거리도 가까워 <br>부담없이 방문할 수 있는 사찰 중 하나이다. <br>
+                                        삼성동 근처에 있으며 신라 시대에 창건되었다.<br>
+                                    <h2>2. 조계사<br>
+                                        조계사 또한 서울 시내에 있는 사찰이다. <br>
+                                        비록 규모는 아담하지만 우리나라의 최대 불교 종단의 본사이며 크고 아름다운 대웅전이 있다. <br>
+                                        조계사 주변에는 불교 서적을 구할수 잇는 서점, 템플스테이, 불교용품 가게 등<br>
+                                        불교와 관련된 것들을 취급하는 곳이 많다. </h2>
+                                    <br>
+                                </div>
+                                <div class="frame">
+                                    <button class="custom-btn btn-12" onclick="location.href='http://www.bongeunsa.org' "><span>click!</span><span>봉은사</span></button></span></button>
+                                    <button class="custom-btn btn-12" onclick="location.href='https://www.jogyesa.kr/' "><span>click!</span><span>조계사</span></button></span></button>
+                                </div>
+
+                                <% } else if (data[1]=='20220601' ) { %>
+                                    <div id="detail">
+                                        <br>
+                                        <h2>지방선거로 지정된 날로 대한민국에서 가장 중요한 날 중 하나이다. </h2>
+                                        <h2>모두가 투표에 참여함으로써 귀중한 표를 선사해야하는 날이다. </h2>
+                                        <br>
+                                    </div>
+                                    <div class="frame">
+                                        <button class="custom-btn btn-12" onclick="location.href='https://si.nec.go.kr' "><span>click!</span><span>내 주변 투표소 찾기</span></button></span></button>
+                                    </div>
+
+                                    <% } else if (data[1]=='20220606' ) { %>
+                                        <div id="detail">
+                                            <br>
+                                            <h2>현충일은 나라를 위해 희생한 순국선열과 장병들을 기리기 위해 지정된 기념일이다. </h2>
+                                            <h2>1. 국립 서울 현충원<br>
+                                                서울 동작역 근처에 위치하고 있으며, 국가를 위해 희생한 분들을 모신 국립묘지입니다.
+                                            </h2>
+                                            <h2>2. 전쟁기념관<br>
+                                                선사시대부터 현대까지의 국가에 헌신한 분들의 공훈과 호국전쟁 자료 등이<br>
+                                                실물, 복제품으로 전시되어 있다. </h2>
+                                            <h2>3. 김포함상공원<br>
+                                                52년간 바다를 지켜온 운봉함을 개조한 공원으로 실제로 사용된 전함을
+                                                볼 수 있다.
+                                            </h2>
+                                            <br>
+                                        </div>
+                                        <div class="frame">
+                                            <button class="custom-btn btn-12" onclick="location.href='https://www.snmb.mil.kr/snmb/index.do' "><span>click!</span><span>국립 서울 현충원</span></button></span></button>
+                                            <button class="custom-btn btn-12" onclick="location.href='https://www.warmemo.or.kr/front/main.do' "><span>click!</span><span>용산 전쟁기념관</span></button></span></button>
+                                            <button class="custom-btn btn-12" onclick="location.href='https://www.guc.or.kr/facility/park_marinepark.asp' "><span>click!</span><span>김포함상공원</span></button></span></button>
+                                        </div>
+
+                                        <% } else if (data[1]=='20220815' ) { %>
+                                            <div id="detail">
+                                                <br>
+                                                <h2>광복절은 대한민국이 일본으로부터 해방된 것을 기념하는 날이다.</h2>
+                                                <h2>1. 서대문형무소 역사관 <br>
+                                                    서울 종로구에 위치한 역사 박물관으로 대한민국 선열들의 자주독립정신을
+                                                    배울 수 있는 곳이다.</h2>
+                                                <h2>2. 전쟁기념관 <br>
+                                                    서울 용산구에 위치해 있으며, 호국 자료를 전시하고 전쟁의 통해  <br>
+                                                    얻을 수 있는 교훈과 호국정신을 배양한다.</h2>
+                                                <h2>3. 근현대사 기념관 <br>
+                                                    순국선열의 묘역과 4/19민주묘지가 자리잡고 있다.
+                                                </h2>
+                                                <br>
+                                            </div>
+                                            <div class="frame">
+                                                <button class="custom-btn btn-12" onclick="location.href='https://sphh.sscmc.or.kr/' "><span>click!</span><span>서대문구형무소</span></button></span></button>
+                                                <button class="custom-btn btn-12" onclick="location.href='https://www.warmemo.or.kr/front/main.do' "><span>click!</span><span>전쟁기념관</span></button></span></button>
+                                                <button class="custom-btn btn-12" onclick="location.href='http://mhmh.or.kr/' "><span>click!</span><span>근현대사 기념관</span></button></span></button>
+                                            </div>
+    
+
+                                            <% } else if (data[1]=='20220909' || data[1]=='20220910'|| data[1]=='20220911') { %>
+                                                <div id="detail">
+                                                    <br>
+                                                    <h2>추석은 음력 8월 15일에 치르는 행사이고, 설날과 함께 한국의 주요 연휴이다. </h2>
+                                                    <h2>가족들과 함께 보름달 같이 풍성한 한가위 보내자!</h2>
+                                                    <br>
+                                                </div>
+                                                <div class="frame">
+                                                    <button class="custom-btn btn-12" onclick="location.href='https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EA%B5%90%ED%86%B5%EC%A7%80%EB%8F%84&oquery=%EA%B5%90%ED%86%B5%ED%8E%B8&tqi=hpXuusp0J14ssao53Xlsssssstw-455597' "><span>click!</span><span>교통지도</span></button>
+                                                </div>
+                                                <% } else if (data[1]=='20220912') { %>
+                                                    <div id="detail">
+                                                        <br>
+                                                        <h2>오늘은 추석의 대체공휴일로 지정된 날이다.</h2>
+                                                        <h2> 추석은 음력 8월 15일에 치르는 행사이고, 설날과 함께 한국의 주요 연휴이다. </h2>
+                                                        <h2>가족들과 함께 보름달 같이 풍성한 한가위 보내자!</h2>
+                                                        <br>
+                                                    </div>
+                                                    <div class="frame">
+                                                        <button class="custom-btn btn-12" onclick="location.href='https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EA%B5%90%ED%86%B5%EC%A7%80%EB%8F%84&oquery=%EA%B5%90%ED%86%B5%ED%8E%B8&tqi=hpXuusp0J14ssao53Xlsssssstw-455597' "><span>click!</span><span>교통지도</span></button>
+                                                    </div>
+    
+
+                                                <% } else if (data[1]=='20221003' ) { %>
+                                                    <div id="detail">
+                                                        <br>
+                                                        <h2>개천절은 대한민국의 국경일중 하나이며, 단군왕검이 고조선을 세운 것을 기념하는 날이다.</h2>
+                                                        <h2>1. 인천 차이나 타운<br>
+                                                            '먹방 여행'뿐만 아니라, 역사 투어까지 가능한 곳이다.<br> 우리가 즐겨먹는 짜장면이 바로 인천
+                                                            차이나타운에서 탄생했으며,<br> 가장 오래된 중국집이 '짜장면박물관'으로 리모델링돼 운영중이다.</h2>
+                                                        <h2>2. 태백 동굴 여행<br>
+                                                            태백에는 많은 동굴들이 있으며, 당일치기여행으로 갈만한 곳이 많다.</h2>
+                                                        <br>
+                                                    </div>
+                                                    <div class="frame">
+                                                        <button class="custom-btn btn-12" onclick="location.href='https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=ITD21122811325905008' "><span>click!</span><span>인천 차이나 타운</span></button></span></button>
+                                                        <button class="custom-btn btn-12" onclick="location.href='https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%ED%83%9C%EB%B0%B1+%EB%8F%99%EA%B5%B4' "><span>click!</span><span>태백 동굴</span></button></span></button>
+                                                    </div>
+
+                                                    <% } else if (data[1]=='20221009') { %>
+                                                        <div id="detail">
+                                                            <br>
+                                                            <h2>한글날은 세종대왕이 훈민정음을 창제한 것을 기념하기 위해 만들어진 기념일이다. </h2>
+                                                            <h2>1. 서울 시청 일대  <br>
+                                                                서울 시청 근처에는 다양한 한글날 행사가 열린다. 
+                                                            </h2> 
+                                                            <h2>2. 광화문 세종대왕 동상  <br>
+                                                                세종대황 동상이 있는 광화문 광장 지하에는 세종이야기와 충무공 이야기가 전시되어 있다.  <br>
+                                                                전시관 안에는 다양한 세종대왕 관련 서적이 자리하고 있다. 
+                                                            </h2>
+                                                            <br>
+                                                        </div>
+                                                        <% } else if (data[1]=='20221010') { %>
+                                                            <div id="detail">
+                                                                <br>
+                                                                <h2>오늘은 한글날의 대체공휴일로 지정된 날이다.   <br>
+                                                                    한글날은 세종대왕이 훈민정음을 창제한 것을 기념하기 위해 만들어진 기념일이다. </h2>
+                                                                <h2>1. 서울 시청 일대  <br>
+                                                                    서울 시청 근처에는 다양한 한글날 행사가 열린다. 
+                                                                </h2> 
+                                                                <h2>2. 광화문 세종대왕 동상  <br>
+                                                                    세종대황 동상이 있는 광화문 광장 지하에는 세종이야기와 충무공 이야기가 전시되어 있다.  <br>
+                                                                    전시관 안에는 다양한 세종대왕 관련 서적이 자리하고 있다. 
+                                                                </h2>
+                                                                <br>
+                                                            </div>
+
+                                                        <% } else if (data[1]=='20221225' ) { %>
+                                                            <div id="detail">
+                                                                <br>
+                                                                <h2>예수 그리스도의 탄생을 기리는 기념일이다.</h2>
+                                                                <h2>1.분천역 산타마을<br>
+                                                                    분천역은 국내 최초의 개방형 관광 열차인 백두개간 열차가 출발하는 역이다.<br>
+                                                                    역 주변에는 다양한 크리스마스 모형들이 있다.</h2>
+                                                                <h2>2. 에버랜드<br>
+                                                                    크리스마스 기간동안 에버랜드는 낭만적인 크리스마스 분위기를 연출한다.<br>
+                                                                    매일 1~2회씩 크리스마스 퍼레이드를 선보인다.</h2>
+                                                                <br>
+                                                            </div>
+                                                            <div class="frame">
+                                                                <button class="custom-btn btn-12" onclick="location.href='https://www.bonghwa.go.kr/open.content/tour/tour.info/santa.town/' "><span>click!</span><span>분천산타마을</span></button></span></button>
+                                                                <button class="custom-btn btn-12" onclick="location.href='https://www.everland.com/web/everland/main.html' "><span>click!</span><span>에버랜드</span></button></span></button>
+                                                            </div>
+                                                            <% } else { %>
+                                                                <h2>Just Take some rest!</h2>
+                                                                <% } %>
+        </div>
+    </body>
+</center>
+
+</html>
