@@ -18,7 +18,7 @@
 
 ### Project Architecture
 
-Require project architecture image
+<div align="center"><img src="./image/ProjectArchitecture.png" width="100%" height="100%"></div>
 
 ### Built With
 
@@ -57,6 +57,18 @@ npm install
 ```shell
 npm start
 ```
+
+5. Connect http://localhost:8080
+
+## Usages
+
+### Web Service
+
+- Click the **[link](http://www.holidaycounter.tk/)**(holidaycounter.tk)
+
+### Mobile Service
+
+- Download APK from **[here](https://drive.google.com/file/d/1LzIfXR_v503WQ9f9670F0WtykbJKYPXm/view?usp=sharing)**
 
 ## Contributing
 

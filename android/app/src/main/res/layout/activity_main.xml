@@ -23,7 +23,6 @@
         android:layout_height="104dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/gowundodum"
-        android:letterSpacing="0.2"
         android:text="D-0"
         android:textAlignment="center"
         android:textColor="@color/tomato"

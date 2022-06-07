@@ -23,6 +23,7 @@ var text = "";
 var dateName = [];
 var locdate = [];
 var tempArr = [];
+var todayDate = "";
 
 // To run EJS engine
 app.set("views", __dirname + "/views");
@@ -36,8 +37,7 @@ function getTodayDate() {
   var month = ("0" + (today.getMonth() + 1)).slice(-2);
   var day = ("0" + today.getDate()).slice(-2);
   var dateString = year + "-" + month + "-" + day;
-
-  //return "2022-12-25"; // 테스트용 날짜를 입력하세요. *** 테스트가 끝나면 주석처리하고 커밋해주세요. *** ex) 2022-09-12, 2022-09-15, 2022-10-04
+  return "2022-12-25"; // 테스트용 날짜를 입력하세요. *** 테스트가 끝나면 주석처리하고 커밋해주세요. *** ex) 2022-09-12, 2022-09-15, 2022-10-04
   return dateString;
 }
 
@@ -165,14 +165,19 @@ function getData() {
 
 // To initialize datas when calling webpage
 function init() {
-  // Intialize Year, Month
-  var date = getTodayDate().split("-");
-  year = date[0];
-  month = date[1];
-  operation = "getRestDeInfo";
-  changeParams(year, month, operation);
-  // Get data from holiday api
-  getData();
+  // To get now date
+  var tempDate = getTodayDate();
+  if (tempDate != todayDate) {
+    // Intialize Year, Month
+    todayDate = tempDate;
+    var date = todayDate.split("-");
+    year = date[0];
+    month = date[1];
+    operation = "getRestDeInfo";
+    changeParams(year, month, operation);
+    // Get data from holiday api
+    getData();
+  }
 }
 
 // Get request for web service

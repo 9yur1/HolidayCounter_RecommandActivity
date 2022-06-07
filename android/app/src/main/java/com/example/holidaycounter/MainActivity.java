@@ -1,5 +1,6 @@
 package com.example.holidaycounter;
 
+import androidx.annotation.Dimension;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     TextView locDate;
     TextView leftDate;
     TextView title;
-    String url = "http://www.holiday-counter.tk:8080/app";
+    String url = "http://www.holidaycounter.ml:8080/app";
     String msg;
     final Bundle bundle = new Bundle();
 
@@ -56,7 +57,15 @@ public class MainActivity extends AppCompatActivity {
             todayDate.setText(data[0]);
             dateName.setText(data[1]);
             locDate.setText(data[2].substring(0, 4) + "년 " + data[2].substring(4, 6) + "월 " + data[2].substring(6) + "일");
-            leftDate.setText("D-" + data[3]);
+            if(data[3].equals("0")) {
+                leftDate.setTextSize(Dimension.SP, 70);
+                leftDate.setText("D - DAY");
+            }
+            else {
+                leftDate.setTextSize(Dimension.SP, 90);
+                leftDate.setText("D - " + data[3]);
+            }
+
         }
     };
 
